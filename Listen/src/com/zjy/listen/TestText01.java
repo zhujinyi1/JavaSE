@@ -3,6 +3,7 @@ package com.zjy.listen;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Field;
 
 public class TestText01{
     public static void main(String[] args) {
@@ -22,6 +23,8 @@ class Myframe extends Frame{
         //按下enter键就会触发输入框监听
         textField.addActionListener(MyActionListener2);
 
+        //设置隐藏替换编码
+        textField.setEchoChar('*');
         pack();
         setVisible(true);
     }
@@ -35,5 +38,7 @@ class MyActionListener2 implements ActionListener{
         TextField textField = (TextField) e.getSource();//获得一些资源
         System.out.println(textField.getText());//获得输入框中文本
 
+        //按回车以后清空
+        textField.setText("");
     }
 }

@@ -2,7 +2,8 @@ package com.zjy.homestay;
 
 public class Main {
     public static void main(String[] args) {
-        Room head = null;
+        SystemAdministrate a = new HomeStay();
+        SystemAdministrate head = null;
         io.Printf("欢迎来到民宿管理系统Java版");
         Loop :while(true){
 
@@ -18,19 +19,19 @@ public class Main {
             int x = io.ScanfInt();
             switch(x){
                 case 1:
-                    head = HomeStay.initialization();
+                    head = a.initialization();
                     break;
                 case 2:
-                    HomeStay.display(head);
+                    a.display(head);
                     break;
                 case 3:
-                    HomeStay.book(head);
+                    a.book(head);
                     break;
                 case 4:
-                    HomeStay.rebook(head);
+                    a.rebook(head);
                     break;
                 case 5:
-                    HomeStay.AddRoom(head);
+                    a.AddRoom(head);
                     break;
                 default :
                     break Loop;

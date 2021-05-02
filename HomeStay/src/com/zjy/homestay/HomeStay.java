@@ -1,9 +1,9 @@
 package com.zjy.homestay;
 
-public class HomeStay {
+public class HomeStay implements SystemAdministrate{
 
     //初始化,初始5个房间
-    public static Room initialization(){
+    public SystemAdministrate initialization(){
         Room head = new Room();
         Room pnew = new Room();
         Room p = head;
@@ -28,12 +28,12 @@ public class HomeStay {
         p.next = null;
 
         io.Printf("房间创建成功！");
-        return head;
+        return (SystemAdministrate) head;
     }
 
     //遍历房间
-    public static void display(Room head){
-        Room p = head;
+    public void display(SystemAdministrate head){
+        Room p = (Room)head;
         System.out.print("房间号  房间类型    有无人居住   居住人姓名     性别  电话  身份证号");
         io.Printf();
         while(p.next!=null){
@@ -51,8 +51,8 @@ public class HomeStay {
     }
 
     //订房
-    public static void book(Room head){
-        Room p = head;
+    public void book(SystemAdministrate head){
+        Room p = (Room)head;
         boolean a = false;
 
         io.Printf("请输入您想预定的房间号：");
@@ -90,8 +90,8 @@ public class HomeStay {
     }
 
     //退房
-    public static void rebook(Room head){
-        Room p = head;
+    public void rebook(SystemAdministrate head){
+        Room p = (Room)head;
         boolean a = false;
 
         io.Printf("请输入您想退订的房间号：");
@@ -119,8 +119,8 @@ public class HomeStay {
 
 
     //增加房间
-   public static void AddRoom(Room head){
-        Room p = head;
+   public void AddRoom(SystemAdministrate head){
+        Room p = (Room) head;
        while (p.next != null){
            p = p.next;
        }
